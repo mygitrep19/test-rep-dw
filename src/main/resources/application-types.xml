@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="dw-test" format="json">
+      <types:shape format="weave" example="examples/test.json"><![CDATA[%dw 2.0
+type dw_test = {|
+  result: {|
+    stepname: String, 
+    fields: Array<{|
+      custom: Boolean, 
+      label: String, 
+      identifier: String, 
+      value: String
+    |}>, 
+    signoffStatuses: Array<Any>, 
+    stepid: String, 
+    packetid: String, 
+    formInfoCard: {|  |}, 
+    user: String, 
+    allSignoffSteps: Array<Any>, 
+    name: String, 
+    message: String, 
+    routename: String, 
+    actions: Array<Any>, 
+    userSignoffSteps: Array<Any>, 
+    parallelstepid: String, 
+    "type": String, 
+    originator: String
+  |}
+|} {"MetadataFormat": "json",
+"example": "{\"result\":{\"stepname\":\"\",\"fields\":[{\"custom\":false,\"label\":\"fieldid 5\",\"identifier\":\"fieldid5\",\"value\":\"\"},{\"custom\":false,\"label\":\"fieldid 1\",\"identifier\":\"fieldid1\",\"value\":\"\"},{\"custom\":false,\"label\":\"fieldid 4\",\"identifier\":\"fieldid4\",\"value\":\"\"}],\"signoffStatuses\":[],\"stepid\":\"\",\"packetid\":\"\",\"formInfoCard\":{},\"user\":\"SYSADMIN\",\"allSignoffSteps\":[],\"name\":\"\",\"message\":\"\",\"routename\":\"\",\"actions\":[],\"userSignoffSteps\":[],\"parallelstepid\":\"\",\"type\":\"process\",\"originator\":\"SYSADMIN\"}}"}
+
+]]></types:shape>
+    </types:type>
+  </types:catalog>
+</types:mule>
